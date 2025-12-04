@@ -74,8 +74,7 @@ const LoginScreen = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                            {/* Duck Icon Placeholder */}
-                            <span style={{ fontSize: 30 }}>🦆</span>
+                            <img src="/favicon.png" alt="User Icon" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div>
                             <div style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>Sandhanu Mendis</div>
