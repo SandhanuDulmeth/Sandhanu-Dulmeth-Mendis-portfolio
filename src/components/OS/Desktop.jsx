@@ -8,6 +8,7 @@ import Resume from '../Apps/Resume';
 import Projects from '../Apps/Projects';
 import Contact from '../Apps/Contact';
 import InternetExplorer from '../Apps/InternetExplorer';
+import Chess from '../Apps/Chess';
 
 const Desktop = () => {
     const { windows, openWindow } = useOS();
@@ -18,6 +19,7 @@ const Desktop = () => {
         { id: 'projects', title: 'My Projects', icon: '🎨', component: <Projects /> },
         { id: 'contact', title: 'Contact Me', icon: '📧', component: <Contact /> },
         { id: 'internet', title: 'Internet Explorer', icon: '🌐', component: <InternetExplorer /> },
+        { id: 'chess', title: 'Chess.exe', icon: '♟️', component: <Chess /> },
         { id: 'recycle', title: 'Recycle Bin', icon: '🗑️', component: <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#888', fontFamily: 'Tahoma, sans-serif' }}><div style={{ fontSize: 48, marginBottom: 10 }}>🗑️</div><div style={{ fontSize: 13 }}>Recycle Bin is empty</div></div> },
     ];
 
