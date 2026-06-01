@@ -74,7 +74,7 @@ const LoginScreen = () => {
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                            <img src="/favicon.png" alt="User Icon" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="User Icon" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div>
                             <div style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>Sandhanu Mendis</div>

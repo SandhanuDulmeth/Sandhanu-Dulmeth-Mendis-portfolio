@@ -89,15 +89,15 @@ const StartMenu = ({ onClose }) => {
                     flexDirection: 'column',
                     gap: 4
                 }}>
-                    <MenuItem icon="📂" label="My Documents" bold small />
-                    <MenuItem icon="🖼️" label="My Pictures" bold small />
+                    <MenuItem icon="📂" label="My Documents" bold small onClick={() => { window.open('https://github.com/SandhanuDulmeth?tab=repositories', '_blank'); onClose(); }} />
+                    <MenuItem icon="🖼️" label="My Pictures" bold small onClick={() => { window.open('https://sandhanudulmeth.github.io/Sandhanu-Dulmeth-Mendis-portfolio/', '_blank'); onClose(); }} />
                     <MenuItem icon="🎵" label="My Music" bold small />
                     <div style={{ height: 1, background: 'linear-gradient(to right, transparent, #AABCCF, transparent)', margin: '4px 0' }}></div>
                     <MenuItem icon="⚙️" label="Control Panel" small />
                     <MenuItem icon="🖨️" label="Printers and Faxes" small />
                     <div style={{ height: 1, background: 'linear-gradient(to right, transparent, #AABCCF, transparent)', margin: '4px 0' }}></div>
-                    <MenuItem icon="❓" label="Help and Support" small />
-                    <MenuItem icon="🔍" label="Search" small />
+                    <MenuItem icon="❓" label="Help and Support" small onClick={() => { alert('Welcome to Sandhanu\'s Windows XP Portfolio!\n\n🖱️ Double-click desktop icons to open apps\n↔️ Drag window title bars to move them\n🔲 Double-click title bar to maximize\n📌 Click taskbar items to switch windows\n🟢 Click Start for all apps & links\n\nBuilt with React + Vite ❤️'); onClose(); }} />
+                    <MenuItem icon="🔍" label="Search" small onClick={() => { window.open('https://github.com/SandhanuDulmeth', '_blank'); onClose(); }} />
                     <MenuItem icon="🏃" label="Run..." small />
                 </div>
             </div>

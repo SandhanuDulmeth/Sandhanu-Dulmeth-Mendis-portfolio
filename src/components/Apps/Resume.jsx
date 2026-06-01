@@ -30,6 +30,7 @@ const Resume = () => {
                 overflow: 'auto',
                 display: 'flex',
                 justifyContent: 'center',
+                alignItems: 'flex-start',
                 padding: 20
             }}>
                 <div style={{
@@ -37,100 +38,130 @@ const Resume = () => {
                     minHeight: 842, // A4 height approx
                     backgroundColor: '#FFF',
                     boxShadow: '0 0 10px rgba(0,0,0,0.5)',
-                    padding: 40,
+                    padding: '30px 40px',
                     color: '#000',
                     fontFamily: 'Arial, sans-serif'
                 }}>
                     {/* Resume Header */}
-                    <div style={{ textAlign: 'center', marginBottom: 30 }}>
-                        <h1 style={{ fontSize: 42, margin: 0, textTransform: 'uppercase', letterSpacing: 2 }}>Sandhanu Mendis</h1>
-                        <h2 style={{ fontSize: 20, margin: '10px 0', fontStyle: 'italic', fontFamily: 'Georgia, serif' }}>Full Stack Developer</h2>
+                    <div style={{ textAlign: 'center', marginBottom: 15 }}>
+                        <h1 style={{ fontSize: 32, margin: 0, textTransform: 'uppercase', letterSpacing: 2 }}>Sandhanu Dulmeth Mendis</h1>
+                        <h2 style={{ fontSize: 16, margin: '6px 0', fontStyle: 'italic', fontFamily: 'Georgia, serif', color: '#444' }}>Full-Stack Developer</h2>
+                        <div style={{ fontSize: 10, color: '#666', display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+                            <span>📧 sandhanudulmeth@gmail.com</span>
+                            <span>📍 Sri Lanka</span>
+                            <span>🔗 github.com/SandhanuDulmeth</span>
+                            <span>💼 linkedin.com/in/sandhanu-mendis</span>
+                        </div>
                         <div style={{ height: 2, background: '#000', width: '100%', marginTop: 10 }}></div>
                     </div>
 
-                    <div style={{ display: 'flex', gap: 30 }}>
+                    <div style={{ display: 'flex', gap: 24 }}>
                         {/* Left Column */}
-                        <div style={{ width: '30%' }}>
+                        <div style={{ width: '32%' }}>
                             <div style={{
-                                width: '100%',
-                                aspectRatio: '1',
-                                backgroundColor: '#333',
-                                borderRadius: 4,
-                                marginBottom: 20,
+                                width: 80,
+                                height: 80,
+                                backgroundColor: '#EAEAEA',
+                                borderRadius: '50%',
+                                marginBottom: 12,
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
-                                color: '#FFF',
-                                fontSize: 40
+                                color: '#333',
+                                fontSize: 36,
+                                marginLeft: 'auto',
+                                marginRight: 'auto',
+                                border: '1px solid #CCC'
                             }}>
                                 👨‍💻
                             </div>
 
                             <SectionTitle title="Contact" />
-                            <div style={{ fontSize: 12, marginBottom: 20 }}>
-                                <strong>Location</strong><br />
-                                Sri Lanka<br /><br />
-                                <strong>Education</strong><br />
-                                UCSC (Undergraduate)<br />
-                                Diploma in SE
+                            <div style={{ fontSize: 11, marginBottom: 12, lineHeight: 1.5 }}>
+                                <strong>Location:</strong> Sri Lanka 🇱🇰<br />
+                                <strong>Email:</strong> sandhanudulmeth@gmail.com<br />
+                                <strong>GitHub:</strong> SandhanuDulmeth<br />
+                                <strong>LinkedIn:</strong> sandhanu-mendis
+                            </div>
+
+                            <SectionTitle title="Education" />
+                            <div style={{ fontSize: 11, marginBottom: 12, lineHeight: 1.4 }}>
+                                <strong>BSc in Computer Science</strong><br />
+                                University of Colombo<br />
+                                School of Computing<br />
+                                <em>2nd Year Undergraduate</em><br /><br />
+                                <strong>Diploma in SE</strong><br />
+                                <em>Completed</em>
                             </div>
 
                             <SectionTitle title="Tech Stack" />
-                            <div style={{ fontSize: 12, marginBottom: 5 }}><strong>Back-End</strong></div>
-                            <ul style={{ fontSize: 11, paddingLeft: 15, margin: '0 0 10px 0' }}>
-                                <li>Java, Spring Boot</li>
-                                <li>Spring Data JPA</li>
-                                <li>MySQL</li>
-                            </ul>
-
-                            <div style={{ fontSize: 12, marginBottom: 5 }}><strong>Front-End</strong></div>
-                            <ul style={{ fontSize: 11, paddingLeft: 15, margin: '0 0 10px 0' }}>
-                                <li>React, Angular</li>
-                                <li>JS/TypeScript</li>
-                                <li>HTML5, CSS3</li>
-                            </ul>
-
-                            <div style={{ fontSize: 12, marginBottom: 5 }}><strong>Other</strong></div>
-                            <ul style={{ fontSize: 11, paddingLeft: 15, margin: 0 }}>
-                                <li>JavaFX</li>
-                                <li>Maven, Git</li>
-                                <li>REST APIs</li>
-                            </ul>
+                            <SkillGroup title="Backend" skills={['Java', 'Spring Boot', 'Node.js', 'Express.js', 'Python']} />
+                            <SkillGroup title="Frontend" skills={['React', 'Angular', 'TypeScript', 'Tailwind CSS', 'Astro']} />
+                            <SkillGroup title="Databases" skills={['Supabase', 'MongoDB', 'MySQL']} />
+                            <SkillGroup title="AI / ML" skills={['Google Gemini', 'RAG', 'Jupyter']} />
+                            <SkillGroup title="DevOps" skills={['Docker', 'Git', 'GitHub Actions', 'Vercel']} />
                         </div>
 
                         {/* Right Column */}
                         <div style={{ flex: 1 }}>
-                            <p style={{ fontSize: 13, lineHeight: 1.4, marginTop: 0 }}>
-                                Computer Science undergraduate at the University of Colombo School of Computing (UCSC) with hands-on experience in building complete web and desktop applications. Committed to writing clean, scalable code that solves real problems.
+                            <p style={{ fontSize: 11, lineHeight: 1.4, marginTop: 0, marginBottom: 12, color: '#333' }}>
+                                2nd-year Computer Science undergraduate at the University of Colombo School of Computing (UCSC) with hands-on production experience. Built and deployed a real-world inventory management system for an auto parts business. Committed to writing clean, scalable code that solves real problems.
                             </p>
 
+                            <SectionTitle title="Featured Project" />
+                            <ProjectEntry
+                                title="Auto Parts Inventory System"
+                                subtitle="Production System — Real Client"
+                                date="2024 – Present"
+                                desc="Built a full-stack inventory management system deployed on Vercel for an auto parts business. Features include dual-role access, PDF report exports, COGS analytics, inventory turnover metrics, reorder suggestions, and sales-by-brand breakdowns."
+                                tech="React · TypeScript · Tailwind CSS · Supabase · Vercel"
+                            />
+
                             <SectionTitle title="Key Projects" />
-
-                            <Job
-                                title="Hospital Management System"
-                                company="Academic Project"
+                            <ProjectEntry
+                                title="Gemini RAG Chatbot"
+                                subtitle="AI / Machine Learning"
                                 date="2024"
-                                desc="Automated over 1,000 patient records, streamlining hospital operations and data management."
+                                desc="AI chatbot leveraging Retrieval-Augmented Generation (RAG) with Google Gemini for context-aware, intelligent responses."
+                                tech="Python · Google Gemini · RAG"
+                            />
+                            <ProjectEntry
+                                title="Real-Time Chat Application"
+                                subtitle="Full-Stack System"
+                                date="2024"
+                                desc="Real-time messaging application with WebSocket-based communication. Built with Angular frontend and Spring Boot backend."
+                                tech="Angular · TypeScript · Java · Spring Boot · WebSocket"
+                            />
+                            <ProjectEntry
+                                title="Inventory Management System"
+                                subtitle="Full-Stack Application"
+                                date="2024"
+                                desc="Complete inventory management solution with React/Vite frontend and Spring Boot RESTful API backend."
+                                tech="React · Vite · TypeScript · Java · Spring Boot"
+                            />
+                            <ProjectEntry
+                                title="Hospital Management System"
+                                subtitle="Desktop Application"
+                                date="2024"
+                                desc="JavaFX desktop application with layered architecture for managing hospital operations and patient records."
+                                tech="Java · JavaFX"
+                            />
+                            <ProjectEntry
+                                title="Carrom Multiplayer Game"
+                                subtitle="Real-Time Multiplayer Game"
+                                date="2024"
+                                desc="Full-stack real-time multiplayer carrom game using Socket.io and Matter.js physics. Built with user authentication, virtual currency coin betting, striker skin store, and secure admin panel."
+                                tech="Node.js · Socket.io · Firebase · Cloudinary · HTML/JS"
                             />
 
-                            <Job
-                                title="Inventory Tracker"
-                                company="Academic Project"
-                                date="2023"
-                                desc="Developed a tracking system that reduced stock errors by 35% through accurate real-time monitoring."
-                            />
-
-                            <SectionTitle title="Education" />
-                            <Job
-                                title="BSc in Computer Science"
-                                company="University of Colombo School of Computing"
-                                date="Present"
-                            />
-                            <Job
-                                title="Diploma in Software Engineering"
-                                company="Recognized Institute"
-                                date="Completed"
-                            />
+                            <SectionTitle title="Additional Skills" />
+                            <div style={{ fontSize: 11, lineHeight: 1.4 }}>
+                                <ul style={{ paddingLeft: 15, margin: 0 }}>
+                                    <li>RESTful API design & development · WebSocket real-time communication</li>
+                                    <li>Docker containerization · CI/CD with GitHub Actions</li>
+                                    <li>Agile development practices · Postman API testing</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,11 +179,11 @@ const ToolbarButton = ({ icon, label, onClick }) => (
 
 const SectionTitle = ({ title }) => (
     <h3 style={{
-        fontSize: 16,
+        fontSize: 13,
         borderBottom: '1px solid #000',
-        paddingBottom: 5,
-        marginTop: 20,
-        marginBottom: 10,
+        paddingBottom: 2,
+        marginTop: 14,
+        marginBottom: 6,
         fontFamily: 'Georgia, serif',
         fontStyle: 'italic'
     }}>
@@ -160,14 +191,22 @@ const SectionTitle = ({ title }) => (
     </h3>
 );
 
-const Job = ({ title, company, date, desc }) => (
-    <div style={{ marginBottom: 15 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: 14 }}>
+const SkillGroup = ({ title, skills }) => (
+    <div style={{ marginBottom: 6, fontSize: 10 }}>
+        <div style={{ fontWeight: 'bold', color: '#111' }}>{title}</div>
+        <div style={{ color: '#444', lineHeight: 1.3 }}>{skills.join(', ')}</div>
+    </div>
+);
+
+const ProjectEntry = ({ title, subtitle, date, desc, tech }) => (
+    <div style={{ marginBottom: 10 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: 12 }}>
             <span>{title}</span>
-            <span>{date}</span>
+            <span style={{ fontSize: 10, fontWeight: 'normal', color: '#666' }}>{date}</span>
         </div>
-        <div style={{ fontSize: 12, fontStyle: 'italic', marginBottom: 5 }}>{company}</div>
-        {desc && <div style={{ fontSize: 13 }}>{desc}</div>}
+        <div style={{ fontSize: 10, fontStyle: 'italic', marginBottom: 2, color: '#555' }}>{subtitle}</div>
+        {desc && <div style={{ fontSize: 11, lineHeight: 1.3, marginBottom: 2 }}>{desc}</div>}
+        {tech && <div style={{ fontSize: 10, color: '#003399', fontStyle: 'italic' }}>Tech: {tech}</div>}
     </div>
 );
 

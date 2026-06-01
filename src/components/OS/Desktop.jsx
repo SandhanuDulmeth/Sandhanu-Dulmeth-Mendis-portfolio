@@ -7,6 +7,7 @@ import AboutMe from '../Apps/AboutMe';
 import Resume from '../Apps/Resume';
 import Projects from '../Apps/Projects';
 import Contact from '../Apps/Contact';
+import InternetExplorer from '../Apps/InternetExplorer';
 
 const Desktop = () => {
     const { windows, openWindow } = useOS();
@@ -16,8 +17,8 @@ const Desktop = () => {
         { id: 'resume', title: 'My Resume', icon: '📝', component: <Resume /> },
         { id: 'projects', title: 'My Projects', icon: '🎨', component: <Projects /> },
         { id: 'contact', title: 'Contact Me', icon: '📧', component: <Contact /> },
-        { id: 'internet', title: 'Internet', icon: '🌐', component: <div>Internet Explorer Placeholder</div> },
-        { id: 'recycle', title: 'Recycle Bin', icon: '🗑️', component: <div>Empty</div> },
+        { id: 'internet', title: 'Internet Explorer', icon: '🌐', component: <InternetExplorer /> },
+        { id: 'recycle', title: 'Recycle Bin', icon: '🗑️', component: <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#888', fontFamily: 'Tahoma, sans-serif' }}><div style={{ fontSize: 48, marginBottom: 10 }}>🗑️</div><div style={{ fontSize: 13 }}>Recycle Bin is empty</div></div> },
     ];
 
     return (
