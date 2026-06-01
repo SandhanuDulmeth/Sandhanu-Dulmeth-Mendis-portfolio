@@ -1,7 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 const InternetExplorer = () => {
     const [url, setUrl] = useState('https://github.com/SandhanuDulmeth');
+
+    const contributionGrid = useMemo(() => {
+        return Array.from({ length: 52 * 7 }, (_, i) => {
+            // eslint-disable-next-line react-hooks/purity
+            const intensity = Math.random();
+            let color = '#161B22';
+            if (intensity > 0.8) color = '#39D353';
+            else if (intensity > 0.6) color = '#26A641';
+            else if (intensity > 0.4) color = '#006D32';
+            else if (intensity > 0.25) color = '#0E4429';
+            return { id: i, color };
+        });
+    }, []);
 
     const pinnedRepos = [
         {
@@ -228,25 +241,17 @@ const InternetExplorer = () => {
                     }}>
                         {/* Contribution grid mock */}
                         <div style={{ display: 'flex', gap: 2, flexWrap: 'wrap' }}>
-                            {Array.from({ length: 52 * 7 }, (_, i) => {
-                                const intensity = Math.random();
-                                let color = '#161B22';
-                                if (intensity > 0.8) color = '#39D353';
-                                else if (intensity > 0.6) color = '#26A641';
-                                else if (intensity > 0.4) color = '#006D32';
-                                else if (intensity > 0.25) color = '#0E4429';
-                                return (
-                                    <div
-                                        key={i}
-                                        style={{
-                                            width: 10,
-                                            height: 10,
-                                            backgroundColor: color,
-                                            borderRadius: 2,
-                                        }}
-                                    />
-                                );
-                            })}
+                            {contributionGrid.map((cell) => (
+                                <div
+                                    key={cell.id}
+                                    style={{
+                                        width: 10,
+                                        height: 10,
+                                        backgroundColor: cell.color,
+                                        borderRadius: 2,
+                                    }}
+                                />
+                            ))}
                         </div>
                         <div style={{ fontSize: 10, color: '#8B949E', marginTop: 8 }}>
                             Learn how we count contributions

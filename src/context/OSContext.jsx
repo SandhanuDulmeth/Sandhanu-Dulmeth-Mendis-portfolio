@@ -96,4 +96,5 @@ export const OSProvider = ({ children }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useOS = () => useContext(OSContext);
