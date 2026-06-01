@@ -27,7 +27,7 @@ const Desktop = () => {
         <div style={{
             height: '100vh',
             width: '100vw',
-            backgroundImage: 'url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80")', // Bliss-like wallpaper
+            backgroundImage: `url(${import.meta.env.BASE_URL}wallpapers.jpg)`, // Local wallpaper
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             position: 'relative',
