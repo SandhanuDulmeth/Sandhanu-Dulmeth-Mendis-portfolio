@@ -9,6 +9,7 @@ import Projects from '../Apps/Projects';
 import Contact from '../Apps/Contact';
 import InternetExplorer from '../Apps/InternetExplorer';
 import Chess from '../Apps/Chess';
+import Terminal from '../Apps/Terminal';
 
 const Desktop = () => {
     const { windows, openWindow } = useOS();
@@ -17,6 +18,7 @@ const Desktop = () => {
         { id: 'about', title: 'About Me', icon: '👤', component: <AboutMe /> },
         { id: 'resume', title: 'My Resume', icon: '📝', component: <Resume /> },
         { id: 'projects', title: 'My Projects', icon: '🎨', component: <Projects /> },
+        { id: 'cmd', title: 'Command Prompt', icon: '📟', component: <Terminal /> },
         { id: 'contact', title: 'Contact Me', icon: '📧', component: <Contact /> },
         { id: 'internet', title: 'Internet Explorer', icon: '🌐', component: <InternetExplorer /> },
         { id: 'chess', title: 'Chess.exe', icon: '♟️', component: <Chess /> },

@@ -77,11 +77,11 @@ const LoginScreen = () => {
                             <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="User Icon" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                         </div>
                         <div>
-                            <div style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>Sandhanu Mendis</div>
+                            <div style={{ color: '#FFF', fontSize: 20, fontWeight: 'bold' }}>Sandhanu Dulmeth Mendis</div>
                             {isLoggingIn ? (
                                 <div style={{ color: '#FFF', fontSize: 12 }}>Loading your personal settings...</div>
                             ) : (
-                                <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 14 }}>Type your password</div>
+                                <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: 13 }}>Click to log in as Engineer</div>
                             )}
                         </div>
                     </div>

@@ -9,7 +9,7 @@ const Resume = () => {
         <div style={{ display: 'flex', flexDirection: 'column', height: '100%', backgroundColor: '#525659' }}>
             {/* Toolbar */}
             <div style={{
-                height: 40,
+                height: 38,
                 backgroundColor: '#ECE9D8',
                 borderBottom: '1px solid #ACA899',
                 display: 'flex',
@@ -18,8 +18,8 @@ const Resume = () => {
                 gap: 15
             }}>
                 <ToolbarButton icon="🔍" label="Zoom" />
-                <ToolbarButton icon="💾" label="Save" />
-                <ToolbarButton icon="🖨️" label="Print" />
+                <ToolbarButton icon="💾" label="Save" onClick={() => window.print()} />
+                <ToolbarButton icon="🖨️" label="Print" onClick={() => window.print()} />
                 <div style={{ width: 1, height: 20, backgroundColor: '#ACA899' }}></div>
                 <ToolbarButton icon="📧" label="Contact Me" onClick={() => openWindow('contact', 'Contact Me', <Contact />, '📧')} />
             </div>
@@ -31,137 +31,147 @@ const Resume = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
-                padding: 20
+                padding: '16px 10px'
             }}>
                 <div style={{
-                    width: 595, // A4 width approx
-                    minHeight: 842, // A4 height approx
+                    width: '100%',
+                    maxWidth: 780,
                     backgroundColor: '#FFF',
-                    boxShadow: '0 0 10px rgba(0,0,0,0.5)',
-                    padding: '30px 40px',
+                    boxShadow: '0 0 12px rgba(0,0,0,0.5)',
+                    padding: '28px 36px',
                     color: '#000',
                     fontFamily: 'Arial, sans-serif'
                 }}>
                     {/* Resume Header */}
-                    <div style={{ textAlign: 'center', marginBottom: 15 }}>
-                        <h1 style={{ fontSize: 32, margin: 0, textTransform: 'uppercase', letterSpacing: 2 }}>Sandhanu Dulmeth Mendis</h1>
-                        <h2 style={{ fontSize: 16, margin: '6px 0', fontStyle: 'italic', fontFamily: 'Georgia, serif', color: '#444' }}>Full-Stack Developer</h2>
-                        <div style={{ fontSize: 10, color: '#666', display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+                    <div style={{ textAlign: 'center', marginBottom: 12 }}>
+                        <h1 style={{ fontSize: 26, margin: 0, textTransform: 'uppercase', letterSpacing: 1.5, color: '#111827' }}>
+                            Sandhanu Dulmeth Mendis
+                        </h1>
+                        <h2 style={{ fontSize: 13, margin: '4px 0', fontWeight: 'bold', color: '#0F766E' }}>
+                            Software Engineering • DevOps • Backend Development
+                        </h2>
+                        <div style={{ fontSize: 10, color: '#4B5563', display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap', marginTop: 4 }}>
                             <span>📧 sandhanudulmeth@gmail.com</span>
-                            <span>📍 Sri Lanka</span>
-                            <span>🔗 github.com/SandhanuDulmeth</span>
-                            <span>💼 linkedin.com/in/sandhanu-mendis</span>
+                            <span>📍 Sri Lanka 🇱🇰</span>
+                            <a href="https://github.com/SandhanuDulmeth" target="_blank" rel="noreferrer" style={{ color: '#003399', textDecoration: 'none' }}>
+                                🔗 github.com/SandhanuDulmeth
+                            </a>
+                            <a href="https://linkedin.com/in/sandhanu-mendis-25ab18324" target="_blank" rel="noreferrer" style={{ color: '#003399', textDecoration: 'none' }}>
+                                💼 linkedin.com/in/sandhanu-mendis
+                            </a>
                         </div>
-                        <div style={{ height: 2, background: '#000', width: '100%', marginTop: 10 }}></div>
+                        <div style={{ height: 2, background: '#003399', width: '100%', marginTop: 8 }}></div>
                     </div>
 
-                    <div style={{ display: 'flex', gap: 24 }}>
-                        {/* Left Column */}
-                        <div style={{ width: '32%' }}>
-                            <div style={{
-                                width: 80,
-                                height: 80,
-                                backgroundColor: '#EAEAEA',
-                                borderRadius: '50%',
-                                marginBottom: 12,
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                color: '#333',
-                                fontSize: 36,
-                                marginLeft: 'auto',
-                                marginRight: 'auto',
-                                border: '1px solid #CCC'
-                            }}>
-                                👨‍💻
-                            </div>
-
-                            <SectionTitle title="Contact" />
-                            <div style={{ fontSize: 11, marginBottom: 12, lineHeight: 1.5 }}>
-                                <strong>Location:</strong> Sri Lanka 🇱🇰<br />
-                                <strong>Email:</strong> sandhanudulmeth@gmail.com<br />
-                                <strong>GitHub:</strong> SandhanuDulmeth<br />
-                                <strong>LinkedIn:</strong> sandhanu-mendis
-                            </div>
-
+                    <div style={{ display: 'flex', gap: 20 }}>
+                        {/* Left Column (Metadata & Skills) */}
+                        <div style={{ width: '33%', flexShrink: 0 }}>
                             <SectionTitle title="Education" />
-                            <div style={{ fontSize: 11, marginBottom: 12, lineHeight: 1.4 }}>
+                            <div style={{ fontSize: 10, marginBottom: 10, lineHeight: 1.4 }}>
                                 <strong>BSc in Computer Science</strong><br />
                                 University of Colombo<br />
-                                School of Computing<br />
-                                <em>2nd Year Undergraduate</em><br /><br />
-                                <strong>Diploma in SE</strong><br />
+                                School of Computing (UCSC)<br />
+                                <span style={{ color: '#0F766E', fontWeight: 'bold' }}>2nd Year Undergraduate</span><br /><br />
+                                <strong>Diploma in Software Engineering</strong><br />
                                 <em>Completed</em>
                             </div>
 
-                            <SectionTitle title="Tech Stack" />
-                            <SkillGroup title="Backend" skills={['Java', 'Spring Boot', 'Node.js', 'Express.js', 'Python']} />
-                            <SkillGroup title="Frontend" skills={['React', 'Angular', 'TypeScript', 'Tailwind CSS', 'Astro']} />
-                            <SkillGroup title="Databases" skills={['Supabase', 'MongoDB', 'MySQL']} />
-                            <SkillGroup title="AI / ML" skills={['Google Gemini', 'RAG', 'Jupyter']} />
-                            <SkillGroup title="DevOps" skills={['Docker', 'Git', 'GitHub Actions', 'Vercel']} />
+                            <SectionTitle title="Core Tech Stack" />
+                            <SkillGroup title="Backend & Systems" skills={['Java', 'Spring Boot', 'Spring MVC', 'REST APIs', 'Node.js', 'Express.js', 'WebSocket']} />
+                            <SkillGroup title="DevOps & Cloud" skills={['Docker', 'Docker Compose', 'Docker Hub', 'GitHub Actions CI/CD', 'Linux', 'AWS (EC2, RDS)']} />
+                            <SkillGroup title="Architecture & Concepts" skills={['Microservices', 'API Gateway', 'JWT Auth', 'Layered Arch', 'Flyway Migrations']} />
+                            <SkillGroup title="Testing & QA" skills={['JUnit 5', 'Mockito', 'Spring MockMvc', 'Maven', 'API E2E Testing']} />
+                            <SkillGroup title="Databases" skills={['MySQL', 'PostgreSQL', 'MongoDB', 'Supabase']} />
+                            <SkillGroup title="Frontend" skills={['React', 'TypeScript', 'Angular', 'Tailwind CSS', 'Vite']} />
+                            <SkillGroup title="AI & Data" skills={['Python', 'Google Gemini', 'RAG', 'Machine Learning', 'Jupyter']} />
+
+                            <SectionTitle title="CS Foundations" />
+                            <div style={{ fontSize: 9.5, lineHeight: 1.35, color: '#374151' }}>
+                                Data Structures & Algorithms, OOP, DBMS, Computer Networks, Operating Systems, Software Architecture, Calculus, Statistics.
+                            </div>
+
+                            <SectionTitle title="Open To" />
+                            <div style={{ fontSize: 10, lineHeight: 1.35, color: '#111827' }}>
+                                • Software Engineering Internships<br />
+                                • Backend Development Internships<br />
+                                • DevOps & Cloud Internships
+                            </div>
                         </div>
 
-                        {/* Right Column */}
+                        {/* Right Column (Experience & Featured Projects) */}
                         <div style={{ flex: 1 }}>
-                            <p style={{ fontSize: 11, lineHeight: 1.4, marginTop: 0, marginBottom: 12, color: '#333' }}>
-                                2nd-year Computer Science undergraduate at the University of Colombo School of Computing (UCSC) with hands-on production experience. Built and deployed a real-world inventory management system for an auto parts business. Committed to writing clean, scalable code that solves real problems.
-                            </p>
-
-                            <SectionTitle title="Featured Project" />
-                            <ProjectEntry
-                                title="Auto Parts Inventory System"
-                                subtitle="Production System — Real Client"
-                                date="2024 – Present"
-                                desc="Built a full-stack inventory management system deployed on Vercel for an auto parts business. Features include dual-role access, PDF report exports, COGS analytics, inventory turnover metrics, reorder suggestions, and sales-by-brand breakdowns."
-                                tech="React · TypeScript · Tailwind CSS · Supabase · Vercel"
-                            />
-
-                            <SectionTitle title="Key Projects" />
-                            <ProjectEntry
-                                title="Gemini RAG Chatbot"
-                                subtitle="AI / Machine Learning"
-                                date="2024"
-                                desc="AI chatbot leveraging Retrieval-Augmented Generation (RAG) with Google Gemini for context-aware, intelligent responses."
-                                tech="Python · Google Gemini · RAG"
-                            />
-                            <ProjectEntry
-                                title="Real-Time Chat Application"
-                                subtitle="Full-Stack System"
-                                date="2024"
-                                desc="Real-time messaging application with WebSocket-based communication. Built with Angular frontend and Spring Boot backend."
-                                tech="Angular · TypeScript · Java · Spring Boot · WebSocket"
-                            />
-                            <ProjectEntry
-                                title="Inventory Management System"
-                                subtitle="Full-Stack Application"
-                                date="2024"
-                                desc="Complete inventory management solution with React/Vite frontend and Spring Boot RESTful API backend."
-                                tech="React · Vite · TypeScript · Java · Spring Boot"
-                            />
-                            <ProjectEntry
-                                title="Hospital Management System"
-                                subtitle="Desktop Application"
-                                date="2024"
-                                desc="JavaFX desktop application with layered architecture for managing hospital operations and patient records."
-                                tech="Java · JavaFX"
-                            />
-                            <ProjectEntry
-                                title="Carrom Multiplayer Game"
-                                subtitle="Real-Time Multiplayer Game"
-                                date="2024"
-                                desc="Full-stack real-time multiplayer carrom game using Socket.io and Matter.js physics. Built with user authentication, virtual currency coin betting, striker skin store, and secure admin panel."
-                                tech="Node.js · Socket.io · Firebase · Cloudinary · HTML/JS"
-                            />
-
-                            <SectionTitle title="Additional Skills" />
-                            <div style={{ fontSize: 11, lineHeight: 1.4 }}>
-                                <ul style={{ paddingLeft: 15, margin: 0 }}>
-                                    <li>RESTful API design & development · WebSocket real-time communication</li>
-                                    <li>Docker containerization · CI/CD with GitHub Actions</li>
-                                    <li>Agile development practices · Postman API testing</li>
-                                </ul>
+                            <div style={{
+                                fontSize: 10.5,
+                                lineHeight: 1.4,
+                                marginBottom: 10,
+                                color: '#1F2937',
+                                backgroundColor: '#F9FAFB',
+                                padding: '6px 8px',
+                                borderLeft: '3px solid #003399'
+                            }}>
+                                2nd-year Computer Science undergraduate at UCSC with strong hands-on experience in Software Engineering, Backend Development, and DevOps. Proven track record building microservices with automated CI/CD pipelines to Docker Hub, 40/40 passing E2E API suites, and deployed client production systems.
                             </div>
+
+                            <SectionTitle title="Featured Projects" />
+                            
+                            {/* NexusEnroll */}
+                            <ProjectEntry
+                                title="NexusEnroll — Microservices Student Enrollment Platform"
+                                subtitle="FLAGSHIP PROJECT · Distributed Systems & DevOps"
+                                date="2024 – Present"
+                                bullets={[
+                                    "Engineered an 11-module independently deployable microservices platform: Auth, Course, Student, Enrollment, Faculty, Academic Record, Notification, Reporting, and API Gateway (Port 8080).",
+                                    "Implemented automated CI/CD pipeline with GitHub Actions running Maven test suites and building/publishing Docker images to Docker Hub (sandhanu/nexusenroll-api-gateway:latest).",
+                                    "Created complete automated testing suite with 40/40 passing End-to-End API tests and 11/11 successful Maven module builds using JUnit 5, Mockito, and Spring MockMvc.",
+                                    "Configured Flyway database migrations, JWT authentication, and Docker Compose local orchestration."
+                                ]}
+                                tech="Java · Spring Boot · Microservices · Docker · GitHub Actions · CI/CD · MySQL · Maven · JWT · Flyway · JUnit 5 · Mockito"
+                            />
+
+                            {/* Auto Parts Inventory */}
+                            <ProjectEntry
+                                title="Auto Parts Inventory Management System"
+                                subtitle="Production System · Real Automobile Business"
+                                date="2024 – Present"
+                                bullets={[
+                                    "Built and deployed a production web platform on Vercel to replace spreadsheet workflows for auto parts inventory.",
+                                    "Developed role-based access, sales stock deduction, low-stock alerts, COGS analytics, inventory turnover metrics, and reorder suggestions.",
+                                    "Integrated Supabase PostgreSQL database with authentication, secure storage, and real-time triggers."
+                                ]}
+                                tech="React · TypeScript · Tailwind CSS · Supabase · PostgreSQL · Vercel"
+                            />
+
+                            <SectionTitle title="Other Notable Projects" />
+                            
+                            <CompactProjectEntry
+                                title="Gemini RAG Chatbot"
+                                tech="Python · Google Gemini · RAG Architecture"
+                                desc="Retrieval-Augmented Generation chatbot leveraging Google Gemini for context-grounded document queries."
+                            />
+
+                            <CompactProjectEntry
+                                title="Real-Time WebSocket Chat Application"
+                                tech="Java · Spring Boot · WebSocket · Angular · TypeScript"
+                                desc="Full-duplex real-time chat application with multi-channel broadcasting and reactive frontend."
+                            />
+
+                            <CompactProjectEntry
+                                title="Docker Todolist & Container Workflows"
+                                tech="Docker · Containerisation · Linux"
+                                desc="Containerised application demonstrating Dockerfile multi-stage builds and isolated container environments."
+                            />
+
+                            <CompactProjectEntry
+                                title="Carrom Multiplayer Game"
+                                tech="Node.js · Socket.io · Firebase · HTML5 Canvas"
+                                desc="Real-time multiplayer carrom board game with custom 2D physics engine, virtual coin betting, and admin panel."
+                            />
+
+                            <CompactProjectEntry
+                                title="Hospital Management System"
+                                tech="Java · JavaFX · MySQL · Layered Architecture"
+                                desc="Desktop application for patient scheduling, medical records, and appointment management."
+                            />
                         </div>
                     </div>
                 </div>
@@ -171,42 +181,58 @@ const Resume = () => {
 };
 
 const ToolbarButton = ({ icon, label, onClick }) => (
-    <div onClick={onClick} style={{ display: 'flex', alignItems: 'center', gap: 5, cursor: 'pointer', fontSize: 12 }}>
-        <span style={{ fontSize: 16 }}>{icon}</span>
+    <div onClick={onClick} style={{ display: 'flex', alignItems: 'center', gap: 5, cursor: 'pointer', fontSize: 11, fontFamily: 'Tahoma, sans-serif' }}>
+        <span style={{ fontSize: 14 }}>{icon}</span>
         <span>{label}</span>
     </div>
 );
 
 const SectionTitle = ({ title }) => (
     <h3 style={{
-        fontSize: 13,
-        borderBottom: '1px solid #000',
+        fontSize: 12,
+        borderBottom: '1.5px solid #003399',
         paddingBottom: 2,
-        marginTop: 14,
+        marginTop: 10,
         marginBottom: 6,
-        fontFamily: 'Georgia, serif',
-        fontStyle: 'italic'
+        fontFamily: 'Arial, sans-serif',
+        textTransform: 'uppercase',
+        letterSpacing: 0.5,
+        color: '#003399'
     }}>
         {title}
     </h3>
 );
 
 const SkillGroup = ({ title, skills }) => (
-    <div style={{ marginBottom: 6, fontSize: 10 }}>
+    <div style={{ marginBottom: 5, fontSize: 9.5 }}>
         <div style={{ fontWeight: 'bold', color: '#111' }}>{title}</div>
-        <div style={{ color: '#444', lineHeight: 1.3 }}>{skills.join(', ')}</div>
+        <div style={{ color: '#4B5563', lineHeight: 1.25 }}>{skills.join(' · ')}</div>
     </div>
 );
 
-const ProjectEntry = ({ title, subtitle, date, desc, tech }) => (
-    <div style={{ marginBottom: 10 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: 12 }}>
+const ProjectEntry = ({ title, subtitle, date, bullets, tech }) => (
+    <div style={{ marginBottom: 9 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', fontSize: 11, color: '#111' }}>
             <span>{title}</span>
-            <span style={{ fontSize: 10, fontWeight: 'normal', color: '#666' }}>{date}</span>
+            <span style={{ fontSize: 9.5, fontWeight: 'normal', color: '#6B7280' }}>{date}</span>
         </div>
-        <div style={{ fontSize: 10, fontStyle: 'italic', marginBottom: 2, color: '#555' }}>{subtitle}</div>
-        {desc && <div style={{ fontSize: 11, lineHeight: 1.3, marginBottom: 2 }}>{desc}</div>}
-        {tech && <div style={{ fontSize: 10, color: '#003399', fontStyle: 'italic' }}>Tech: {tech}</div>}
+        <div style={{ fontSize: 9.5, color: '#0F766E', fontWeight: 'bold', marginBottom: 2 }}>{subtitle}</div>
+        <ul style={{ margin: '2px 0 3px 0', paddingLeft: 14, fontSize: 9.5, lineHeight: 1.35, color: '#374151' }}>
+            {bullets.map((b, idx) => (
+                <li key={idx} style={{ marginBottom: 1 }}>{b}</li>
+            ))}
+        </ul>
+        {tech && <div style={{ fontSize: 9, color: '#003399', fontStyle: 'italic' }}><strong>Tech:</strong> {tech}</div>}
+    </div>
+);
+
+const CompactProjectEntry = ({ title, tech, desc }) => (
+    <div style={{ marginBottom: 5, fontSize: 9.5 }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <strong>{title}</strong>
+            <span style={{ color: '#0F766E', fontSize: 8.5 }}>{tech}</span>
+        </div>
+        <div style={{ color: '#4B5563', lineHeight: 1.25 }}>{desc}</div>
     </div>
 );
 

@@ -19,12 +19,14 @@ A React-based interactive portfolio application that faithfully recreates the cl
 * **Start Menu**: Fully functional with left panel (apps) and right panel (My Documents → GitHub, Help & Support → usage tips, Search → GitHub profile).
 
 ### 📁 Built-in Applications
-* **👤 About Me** — XP "System Properties" dialog with tabs (General / Skills / Interests). Shows bio, tech stack grouped by category, and current interests.
-* **📝 My Resume** — PDF-viewer style resume displaying full CV: education at UCSC, production projects, technical skills, and contact info.
-* **🎨 My Projects** — Windows Explorer "Details" view listing 18 real GitHub projects. Switch between Details and Icons views. Double-click to open GitHub repos.
+* **👤 About Me** — XP "System Properties" dialog with tabs (General / Skills / DevOps & Testing / Interests & CS). Shows bio, full tech stack, automated testing metrics, and career focus.
+* **📝 My Resume** — PDF-viewer style resume displaying full CV: education at UCSC, production systems, NexusEnroll microservices architecture, and technical competencies.
+* **🎨 My Projects** — Windows Explorer view listing 21 real projects with category filters (Featured, DevOps, Backend, AI, Full-Stack) and an interactive XP preview panel.
+* **📟 Command Prompt (cmd.exe)** — Interactive retro Windows XP terminal supporting commands like `docker pull`, `mvn test`, `nexusenroll`, `skills`, and `projects`.
 * **📧 Contact Me** — Outlook Express compose window. Pre-filled "To" field, real email via `mailto:` link, and direct links to LinkedIn, GitHub, and Portfolio.
-* **🌐 Internet Explorer** — Simulated GitHub profile page with dark theme, pinned repos (clickable), and a mock contribution graph.
-* **🗑️ Recycle Bin** — An empty bin, just like the real thing.
+* **🌐 Internet Explorer** — Simulated GitHub profile page with live stats badges, typing SVG intro, contribution snake, and pinned repos.
+* **♟️ Chess.exe** — Playable chess game against chess engine.
+* **🗑️ Recycle Bin** — Classic empty bin.
 
 ---
 
